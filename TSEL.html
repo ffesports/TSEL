@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+$(document).ready(function() {
+  $.ajax({
+    type: "GET",
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSIePDNVETe7GAFxXlSevpZutaIgyldY_G_dEWNTPTbZYcTUBs1SLUUeQzsjiK4c1gOiX7uDWWt7OQ2/pub?gid=0&single=true&output=csv",
+    dataType: "text",
+    success: function(data) {
+      var rows = data.split('\n');
+      var table = document.getElementById("table");
+
+      for (var i = 0; i < rows.length; i++) {
+        var cells = rows[i].split(',');
+        var row = table.insertRow();
+
+        for (var j = 0; j < cells.length; j++) {
+          var cell = row.insertCell();
+
+          // 如果是圖片網址所在的列，插入圖片元素
+          if (j === 0) {
+            var img = document.createElement('img');
+            img.src = cells[j];
+            img.width = 48; // 設定圖片寬度
+            cell.appendChild(img);
+          } else {
+            cell.textContent = cells[j];
+          }
+        }
+      }
+    }
+  });
+});
+</script>
+ <meta charset="utf-8">
+    <meta property="og:title" content="OBS即時積分榜">
+<!--	-->
+    <meta property="og:description" content="Taiwan Super Elite League，簡稱:TSEL。">
+    <meta property="og:image" content="TSEL_PNG/mini.png">
+    <meta property="og:type" content="website">
+ <link rel="icon" href="TSEL_PNG/mark.ico" type="image/x-icon">
+    <title>TSEL　OBS即時積分榜</title> 
+    
+    <style>
+    @import url("webfonts/GenSenRoundedTW_B_01/stylesheet.css");
+
+  
+    
+   
+     
+
+.Excel {
+    color: #FFFFFF;
+    font-size: 30px;
+    display: flex;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    font-family: "Arial";
+    text-transform: uppercase;
+    font-weight: 900;
+}
+     
+       
+  #table {
+    border-collapse: separate;
+    border-spacing: 10mm 5mm;
+  } 
+  body {
+    background-image: url("TSEL_PNG/123.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    } 
+  
+    </style>
+</head>
+<body>
+ 
+ 
+
+ 
+ <div class="Excel" style="padding-top: 96px;padding-right: 0px;">
+  <table id="table"></table> 
+ </div> 
+     
+</body>
+</html>
