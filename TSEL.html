@@ -6,7 +6,7 @@
 $(document).ready(function() {
   $.ajax({
     type: "GET",
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSIePDNVETe7GAFxXlSevpZutaIgyldY_G_dEWNTPTbZYcTUBs1SLUUeQzsjiK4c1gOiX7uDWWt7OQ2/pub?gid=0&single=true&output=csv",
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSIePDNVETe7GAFxXlSevpZutaIgyldY_G_dEWNTPTbZYcTUBs1SLUUeQzsjiK4c1gOiX7uDWWt7OQ2/pub?gid=1115421480&single=true&output=csv",
     dataType: "text",
     success: function(data) {
       var rows = data.split('\n');
@@ -31,7 +31,7 @@ $(document).ready(function() {
         }
       }
     }
-  });
+  }); 
 });
 </script>
  <meta charset="utf-8">
@@ -41,7 +41,7 @@ $(document).ready(function() {
     <meta property="og:image" content="TSEL_PNG/mini.png">
     <meta property="og:type" content="website">
  <link rel="icon" href="TSEL_PNG/mark.ico" type="image/x-icon">
-    <title>TSEL　OBS即時積分榜</title> 
+    <title>OBS即時積分榜</title> 
     
     <style>
     @import url("webfonts/GenSenRoundedTW_B_01/stylesheet.css");
@@ -61,16 +61,16 @@ $(document).ready(function() {
     align-items: center;
     font-family: "Arial";
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 800;
 }
      
        
   #table {
     border-collapse: separate;
-    border-spacing: 10mm 5mm;
+    border-spacing: 45mm 0.6mm;
   } 
   body {
-    background-image: url("TSEL_PNG/123.png");
+    background-image: url("TSEL_PNG/135.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
     } 
@@ -82,7 +82,7 @@ $(document).ready(function() {
  
 
  
- <div class="Excel" style="padding-top: 96px;padding-right: 0px;">
+ <div class="Excel" style="padding-top: 214px; padding-right: 60px; font-size: 60; line-height: normal;">
   <table id="table"></table> 
  </div> 
      
