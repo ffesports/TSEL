@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+    <meta property="og:title" content="OBS即時積分榜">
+<!--	-->
+    <meta property="og:description" content="Taiwan Super Elite League，簡稱:TSEL。">
+    <meta property="og:image" content="TSEL_PNG/mini.png">
+    <meta property="og:type" content="website">
+ <link rel="icon" href="TSEL_PNG/mark.ico" type="image/x-icon">
+    <title>OBS即時積分榜</title> 
+    
+    <link rel="stylesheet" href="./font.css"><style>
+    @import url("webfonts/GenSenRoundedTW_B_01/stylesheet.css");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: 'GFF Latin';
+	font-weight: 600;
+}
+  
+	  	
+	  
+        
+
+.Excel {
+    color: #FFFFFF;
+    font-size: 23px;
+    display: flex;
+    height: auto;
+    width: auto;
+/*    justify-content: center;*/
+/*    align-items: center;*/
+    
+    text-transform: uppercase;
+}
+	
+
+	
+/* 調整圖片列的間距 */
+#table td:nth-child(1) {
+	padding-top: 0px; /* 上面間距 */
+	padding-bottom: 0px; /* 下面間距 */
+	padding-left: 30px; /* 左邊間距 */
+    padding-right: 0px; /* 右邊間距 */
+	height: 50px; /* 調整高度值 */
+    vertical-align: top; /* 將內容置頂 */
+	position: relative; /* 啟用定位 */
+    top: -5px; /* 向上偏移指定像素 */
+   
+}
+
+/* 調整文字列的間距 */
+#table td:nth-child(2),
+#table td:nth-child(3),
+#table td:nth-child(4),
+#table td:nth-child(5) {
+    padding-left: 20px; /* 左邊間距 */
+    padding-right: 20px; /* 右邊間距 */
+    padding-top: 0px; /* 上面間距 */
+    padding-bottom: 0px; /* 下面間距 */
+	
+	
+}
+	
+#table td:nth-child(3),
+#table td:nth-child(4),
+#table td:nth-child(5) {
+    text-align: center;
+}	
+	
+/* 調整文字列的間距 */
+#table td:nth-child(2) {
+    padding-left: 5px; /* 左邊間距 */
+    padding-right: 0px; /* 右邊間距 */
+    padding-top: 0px; /* 上面間距 */
+    padding-bottom: 0px; /* 下面間距 */
+}	
+	
+#table td:nth-child(3) {
+    padding-left: 25px; /* 左邊間距 */
+    
+}
+	
+	#table img {
+    max-width: 40px; /* 調整圖片最大寬度 */
+    max-height: 40px; /* 調整圖片最大高度 */
+}
+	
+	 body {
+    background-image: url("PNG/01.png");
+    background-repeat: no-repeat;
+    background-size: 80.5% auto;
+    }	
+		
+    </style>
+</head>
+<body>
+	
+ 
+
+	
+	<div class="Excel" style="padding-top: 35px;padding-left: 10px;">
+  <table id="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <!-- 添加更多表頭列 -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 這裡的數據將動態生成 -->
+        </tbody>
+    </table>
+	 
+ </div>	
+ 
+	
+	
+	 <script>
+        const apiKey = 'AIzaSyAAh_GQcivIf99QOtRt1tNic9CXMxbRnb8';
+        const spreadsheetId = '1u8QVH8mRr-EKd15lg6IO0ZcBZBaTSj96MfPty473EUg';
+        const sheetName = 'OBS';
+        const dataTable = document.getElementById('table');
+
+        function fetchData() {
+            const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const values = data.values;
+
+                    dataTable.querySelector('tbody').innerHTML = '';
+
+                    values.forEach(row => {
+                        const rowElement = document.createElement('tr');
+                        row.forEach((cellData, index) => {
+                            const cellElement = document.createElement('td');
+                            if (index === 0) { // 假設第 1 列是圖片網址的列
+                                const imgElement = document.createElement('img');
+                                imgElement.src = cellData;
+                                cellElement.appendChild(imgElement);
+                            } else {
+                                cellElement.textContent = cellData;
+                            }
+                            rowElement.appendChild(cellElement);
+                        });
+                        dataTable.querySelector('tbody').appendChild(rowElement);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+
+        fetchData();
+        setInterval(fetchData, 60000);
+    </script>
+</body>
+</html>
