@@ -112,37 +112,34 @@ video {
     display: flex;
     height: auto;
     width: auto;
-/*    justify-content: center;*/
-/*    align-items: center;*/
+
     
     text-transform: uppercase;
 }
 	
 
 	
-/* 調整圖片列的間距 */
+
 #table td:nth-child(1) {
-	padding-top: 0px; /* 上面間距 */
-	padding-bottom: 0px; /* 下面間距 */
-	padding-left: 30px; /* 左邊間距 */
-    padding-right: 0px; /* 右邊間距 */
-	height: 10px; /* 調整高度值 */
-    vertical-align: top; /* 將內容置頂 */
-	position: relative; /* 啟用定位 */
-    top: -5px; /* 向上偏移指定像素 */
-   
+	padding-top: 0px;
+	padding-bottom: 0.5px;
+	padding-left: 30px; 
+    padding-right: 0px; 
+	height: 10px;
+    vertical-align: top;
+	position: relative;
+    top: -5px; 
 }
 
-/* 調整文字列的間距 */
+
 #table td:nth-child(2),
 #table td:nth-child(3),
 #table td:nth-child(4),
 #table td:nth-child(5) {
-    padding-left: 125px; /* 左邊間距 */
-    padding-right: 125px; /* 右邊間距 */
-    padding-top: 0px; /* 上面間距 */
-    padding-bottom: 0px; /* 下面間距 */
-	
+    padding-left: 100px; 
+    padding-right: 100px;
+    padding-top: 0px; 
+    padding-bottom: 0px;
 	
 }
 	
@@ -152,26 +149,32 @@ video {
     text-align: center;
 }	
 	
-/* 調整文字列的間距 */
+
 #table td:nth-child(2) {
-    padding-left: 15px; /* 左邊間距 */
-    padding-right: 0px; /* 右邊間距 */
-    padding-top: 0px; /* 上面間距 */
-    padding-bottom: 0px; /* 下面間距 */
+    padding-left: 15px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }	
 	
 #table td:nth-child(3) {
-    padding-left: 270px; /* 左邊間距 */
+    padding-left: 380px;
+}
+	
+#table td:nth-child(4) {
+    padding-left: 125px;
+	padding-right: 80px;
     
 }
 	
+	
 	#table img {
-    max-width: 48px; /* 調整圖片最大寬度 */
-    max-height: 48px; /* 調整圖片最大高度 */
+    max-width: 52px;
+    max-height: auto;
 }
 	
 	 body {
-    background-image: url("PNG/02.png");
+    background-image: url("PNG/03.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
     }	
@@ -183,17 +186,17 @@ video {
  
 
 	
-	<div class="Excel" style="padding-top: 279px;padding-left: 350px;">
+	<div class="Excel" style="padding-top: 230px;padding-left: 340px;">
   <table id="table">
         <thead>
             <tr>
                 <th></th>
                 <th></th>
-                <!-- 添加更多表頭列 -->
+                
             </tr>
         </thead>
         <tbody>
-            <!-- 這裡的數據將動態生成 -->
+            
         </tbody>
     </table>
 	 
@@ -221,7 +224,7 @@ video {
                         const rowElement = document.createElement('tr');
                         row.forEach((cellData, index) => {
                             const cellElement = document.createElement('td');
-                            if (index === 0) { // 假設第 1 列是圖片網址的列
+                            if (index === 0) { 
                                 const imgElement = document.createElement('img');
                                 imgElement.src = cellData;
                                 cellElement.appendChild(imgElement);
