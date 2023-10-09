@@ -6,7 +6,7 @@
 $(document).ready(function() {
   $.ajax({
     type: "GET",
-    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQYy45anzn_VM9dUuJBXnh7AKLG8mRweWJCB22JIWwu_gZzCzA19z0r-o9DTXcYpAItW2P9coz1ud3P/pub?gid=0&single=true&output=csv",
+    url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQYy45anzn_VM9dUuJBXnh7AKLG8mRweWJCB22JIWwu_gZzCzA19z0r-o9DTXcYpAItW2P9coz1ud3P/pub?gid=178027518&single=true&output=csv",
     dataType: "text",
     success: function(data) {
       var rows = data.split('\n');
@@ -52,7 +52,7 @@ $(document).ready(function() {
      
 
 .Excel {
-    color: #FFFFFF;
+    color: #FF0004;
     font-size: 30px;
     display: flex;
     height: auto;
@@ -67,10 +67,9 @@ $(document).ready(function() {
        
   #table {
     border-collapse: separate;
-    border-spacing: 30mm 1mm;
+    border-spacing: 50mm 5mm;
   } 
   body {
-    background-image: url("TSEL_456/1212.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
     } 
