@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8">
+    <meta property="og:title" content="top12">
+<!--	-->
+    
+    <meta property="og:image" content="PNG/mini.png">
+    <meta property="og:type" content="website">
+    <title>top12</title> 
+    
+    <link rel="stylesheet" href="./font.css"><style>
+    @import url("webfonts/GenSenRoundedTW_B_01/stylesheet.css");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+  
+}
+  
+	  	
+	  
+        
+
+.Excel {
+    color: #FFFFFF;
+    font-size: 45px;
+    display: flex;
+    height: auto;
+    width: auto;
+    /*    justify-content: center;*/
+/*    align-items: center;*/
+    
+    text-transform: uppercase;
+    font-family: "Noto Sans CJK TC Black";
+}
+	
+#table td:nth-child(2),
+#table td:nth-child(3),
+#table td:nth-child(4),
+#table td:nth-child(5),
+#table td:nth-child(6),
+#table td:nth-child(7),
+#table td:nth-child(8) {
+   text-align: center;
+}	
+	
+	
+	
+
+/* 調整文字列的間距 */
+#table td:nth-child(1),
+#table td:nth-child(2),
+#table td:nth-child(3),
+#table td:nth-child(4),
+#table td:nth-child(5),
+#table td:nth-child(6),
+#table td:nth-child(7),
+#table td:nth-child(8) {
+    padding-left: 0px; /* 左邊間距 */
+    padding-right: 0px; /* 右邊間距 */
+    padding-top: 0px; /* 上面間距 */
+    padding-bottom: 0px; /* 下面間距 */	
+	
+}
+
+
+#table td {
+	padding-top: 0px; /* 上面間距 */
+	padding-bottom: 0px; /* 下面間距 */
+	padding-left: 0px; /* 左邊間距 */
+    padding-right: 0px; /* 右邊間距 */
+	height: 73.5px; /* 調整高度值 */
+    vertical-align: top; /* 將內容置頂 */
+	position: relative; /* 啟用定位 */
+    top: 5px; /* 向上偏移指定像素 */
+   
+}	
+
+#table td:nth-child(1) {
+    padding-left: 0px; /* 左邊間距 */
+    padding-right: 0px; /* 右邊間距 */
+    padding-top: 0px; /* 上面間距 */
+    padding-bottom: 0px; /* 下面間距 */
+}	
+
+#table td:nth-child(2) {
+    padding-left: 240px; /* 左邊間距 */
+    padding-right: 0px; /* 右邊間距 */
+    padding-top: 0px; /* 上面間距 */
+    padding-bottom: 0px; /* 下面間距 */
+}
+
+#table td:nth-child(3) {
+    padding-left: 220px; /* 左邊間距 */
+    padding-right: 0px; /* 右邊間距 */
+    padding-top: 0px; /* 上面間距 */
+    padding-bottom: 0px; /* 下面間距 */
+}
+	
+#table td:nth-child(4) {
+    padding-left: 200px; /* 左邊間距 */
+    padding-right: 0px; /* 右邊間距 */
+    padding-top: 0px; /* 上面間距 */
+    padding-bottom: 0px; /* 下面間距 */
+}
+	
+
+	
+	
+
+
+	
+	 body {
+    background-image: url("PNG/top12.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    }	
+		
+    </style>
+</head>
+<body>
+	
+ 
+
+	
+	<div class="Excel" style="padding-top: 100px;padding-left: 440px;">
+  <table>
+    <thead>
+        <!-- 這裡添加表格的標題行 -->
+        <tr>
+            <th></th>
+            <th></th>
+            <!-- 添加更多表頭列 -->
+        </tr>
+    </thead>
+    <tbody id="table">
+        <!-- 這裡將插入Google Sheets數據 -->
+    </tbody>
+</table>
+	 
+ </div>	
+ 
+	
+	
+<script>
+    const apiKey = 'AIzaSyAEIWAa-fcyOH4AoVQpGucd24H94WXrouE'; //API 金鑰 6
+    const spreadsheetId = '1mkbHLtzV_1qbk7QxkM-eU0CSvh4Nq9Ivmsev-k-QYzM';
+    const sheetName = 'TEAM12';
+    const dataContainer = document.getElementById('table');
+
+    function fetchData() {
+        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const values = data.values;
+
+                dataContainer.innerHTML = ''; // 清空容器內容
+
+                values.forEach(rowData => {
+                    const rowElement = document.createElement('tr'); // 創建一個表格行
+
+                    rowData.forEach(cellData => {
+                        const cellElement = document.createElement('td'); // 創建一個表格單元格
+                        cellElement.textContent = cellData;
+                        rowElement.appendChild(cellElement);
+                    });
+
+                    dataContainer.appendChild(rowElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }
+
+    // 初始載入數據並設置定時器以每隔一段時間重新載入
+    fetchData();
+    setInterval(fetchData, 15000); // 每隔 15 秒（毫秒數為 15000）重新載入一次
+</script>
+
+</body>
+</html>
