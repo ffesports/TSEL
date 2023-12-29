@@ -3,9 +3,9 @@
 	<meta charset="utf-8">
     <meta property="og:title" content="AC">
 <!--	-->
-    
-    <meta property="og:image" content="PNG/mini.png">
+
     <meta property="og:type" content="website">
+ <link rel="icon" href="TSEL_PNG/mark.ico" type="image/x-icon">
     <title>AC</title> 
     
     <link rel="stylesheet" href="./font.css"><style>
@@ -97,7 +97,8 @@ video {
     font: inherit;
     font-size: 100%;
     vertical-align: baseline;
-  
+    font-family: 'GFF Latin';
+	font-weight: 600;
 }
   
 	  	
@@ -106,92 +107,74 @@ video {
 
 .Excel {
     color: #FFFFFF;
-    font-size: 45px;
+    font-size: 40px;
     display: flex;
     height: auto;
     width: auto;
-    /*    justify-content: center;*/
+/*    justify-content: center;*/
 /*    align-items: center;*/
     
     text-transform: uppercase;
-    font-family: "Noto Sans CJK TC Black";
 }
 	
-#table td:nth-child(2),
-#table td:nth-child(3),
-#table td:nth-child(4),
-#table td:nth-child(5),
-#table td:nth-child(6),
-#table td:nth-child(7),
-#table td:nth-child(8) {
-   text-align: center;
-}	
-	
-	
-	
 
-/* 調整文字列的間距 */
-#table td:nth-child(1),
-#table td:nth-child(2),
-#table td:nth-child(3),
-#table td:nth-child(4),
-#table td:nth-child(5),
-#table td:nth-child(6),
-#table td:nth-child(7),
-#table td:nth-child(8) {
-    padding-left: 0px; /* 左邊間距 */
-    padding-right: 0px; /* 右邊間距 */
-    padding-top: 0px; /* 上面間距 */
-    padding-bottom: 0px; /* 下面間距 */	
 	
-}
-
-
-#table td {
+/* 調整圖片列的間距 */
+#table td:nth-child(1) {
 	padding-top: 0px; /* 上面間距 */
-	padding-bottom: 0px; /* 下面間距 */
-	padding-left: 0px; /* 左邊間距 */
+	padding-bottom: 5.5px; /* 下面間距 */
+	padding-left: 30px; /* 左邊間距 */
     padding-right: 0px; /* 右邊間距 */
-	height: 73.5px; /* 調整高度值 */
+	height: 10px; /* 調整高度值 */
     vertical-align: top; /* 將內容置頂 */
 	position: relative; /* 啟用定位 */
-    top: 5px; /* 向上偏移指定像素 */
+    top: -5px; /* 向上偏移指定像素 */
    
-}	
-
-#table td:nth-child(1) {
-    padding-left: 0px; /* 左邊間距 */
-    padding-right: 0px; /* 右邊間距 */
-    padding-top: 0px; /* 上面間距 */
-    padding-bottom: 0px; /* 下面間距 */
-}	
-
-#table td:nth-child(2) {
-    padding-left: 240px; /* 左邊間距 */
-    padding-right: 0px; /* 右邊間距 */
-    padding-top: 0px; /* 上面間距 */
-    padding-bottom: 0px; /* 下面間距 */
 }
 
-#table td:nth-child(3) {
-    padding-left: 220px; /* 左邊間距 */
+/* 調整文字列的間距 */
+#table td:nth-child(2),
+#table td:nth-child(3),
+#table td:nth-child(4),
+#table td:nth-child(5) {
+    padding-left: 100px; /* 左邊間距 */
+    padding-right: 100px; /* 右邊間距 */
+    padding-top: 0px; /* 上面間距 */
+    padding-bottom: 0px; /* 下面間距 */
+	
+	
+}
+	
+#table td:nth-child(3),
+#table td:nth-child(4),
+#table td:nth-child(5) {
+    text-align: center;
+}	
+	
+/* 調整文字列的間距 */
+#table td:nth-child(2) {
+    padding-left: 15px; /* 左邊間距 */
     padding-right: 0px; /* 右邊間距 */
     padding-top: 0px; /* 上面間距 */
     padding-bottom: 0px; /* 下面間距 */
+}	
+	
+#table td:nth-child(3) {
+    padding-left: 270px; /* 左邊間距 */
+    
 }
 	
 #table td:nth-child(4) {
-    padding-left: 200px; /* 左邊間距 */
-    padding-right: 0px; /* 右邊間距 */
-    padding-top: 0px; /* 上面間距 */
-    padding-bottom: 0px; /* 下面間距 */
+    padding-left: 140px; /* 左邊間距 */
+	padding-right: 110px; /* 右邊間距 */
+    
 }
 	
-
 	
-	
-
-
+	#table img {
+    max-width: 60px; /* 調整圖片最大寬度 */
+    max-height: auto; /* 調整圖片最大高度 */
+}
 	
 	 body {
     background-image: url("PNG/AC.jpg");
@@ -206,62 +189,63 @@ video {
  
 
 	
-	<div class="Excel" style="padding-top: 100px;padding-left: 440px;">
-  <table>
-    <thead>
-        <!-- 這裡添加表格的標題行 -->
-        <tr>
-            <th></th>
-            <th></th>
-            <!-- 添加更多表頭列 -->
-        </tr>
-    </thead>
-    <tbody id="table">
-        <!-- 這裡將插入Google Sheets數據 -->
-    </tbody>
-</table>
+	<div class="Excel" style="padding-top: 115px;padding-left:325px;">
+  <table id="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <!-- 添加更多表頭列 -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 這裡的數據將動態生成 -->
+        </tbody>
+    </table>
 	 
  </div>	
  
 	
 	
-<script>
-    const apiKey = 'AIzaSyBRhiCtOrhRW5R0kWUFVo0bkJI5H0ftwok'; //API 金鑰 7
-    const spreadsheetId = '1mkbHLtzV_1qbk7QxkM-eU0CSvh4Nq9Ivmsev-k-QYzM';
-    const sheetName = 'AC';
-    const dataContainer = document.getElementById('table');
+	 <script>
+        const apiKey = 'AIzaSyBRhiCtOrhRW5R0kWUFVo0bkJI5H0ftwok';
+        const spreadsheetId = '1nfJyFC7Coxlq4vsOULWyaZm7KqbGypOFpXaNq4-b_FM';
+        const sheetName = 'AC';
+        const dataTable = document.getElementById('table');
 
-    function fetchData() {
-        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+        function fetchData() {
+            const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const values = data.values;
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const values = data.values;
 
-                dataContainer.innerHTML = ''; // 清空容器內容
+                    dataTable.querySelector('tbody').innerHTML = '';
 
-                values.forEach(rowData => {
-                    const rowElement = document.createElement('tr'); // 創建一個表格行
-
-                    rowData.forEach(cellData => {
-                        const cellElement = document.createElement('td'); // 創建一個表格單元格
-                        cellElement.textContent = cellData;
-                        rowElement.appendChild(cellElement);
+                    values.forEach(row => {
+                        const rowElement = document.createElement('tr');
+                        row.forEach((cellData, index) => {
+                            const cellElement = document.createElement('td');
+                            if (index === 0) { // 假設第 1 列是圖片網址的列
+                                const imgElement = document.createElement('img');
+                                imgElement.src = cellData;
+                                cellElement.appendChild(imgElement);
+                            } else {
+                                cellElement.textContent = cellData;
+                            }
+                            rowElement.appendChild(cellElement);
+                        });
+                        dataTable.querySelector('tbody').appendChild(rowElement);
                     });
-
-                    dataContainer.appendChild(rowElement);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
                 });
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    }
+        }
 
-    // 初始載入數據並設置定時器以每隔一段時間重新載入
-    fetchData();
-    setInterval(fetchData, 15000); // 每隔 15 秒（毫秒數為 15000）重新載入一次
-</script>
-
+        fetchData();
+        setInterval(fetchData, 300000);
+    </script>
 </body>
 </html>
