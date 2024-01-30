@@ -97,7 +97,7 @@ li a {
     display: block;
     padding: 10px;
     font-size: 20px;
-    color: #72bbff;
+    color: #b6b6b6;
     text-align: center;
     font-family: "Noto Sans TC";
     font-weight: 600;
@@ -106,7 +106,7 @@ li a {
 }
 
 li a:hover{
-    color:#FF7C93 !important;
+    color:#72bbff !important;
     background-color: #5C5C5C;
     
 }
