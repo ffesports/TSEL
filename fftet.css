@@ -55,7 +55,7 @@ header {
 
 
 .Text{
-    color: #FF0004;
+    color: #72bbff;
     font-size: 26px;
     height: 84px;
 }
@@ -85,7 +85,7 @@ nav{
     height:70px;
 }
 .navbar{
-    background-color: #CBCBCB;
+    background-color: #72bbff;
     position: fixed;
     top: 0;
     width: 100%;
@@ -97,7 +97,7 @@ li a {
     display: block;
     padding: 10px;
     font-size: 20px;
-    color: #000000;
+    color: #72bbff;
     text-align: center;
     font-family: "Noto Sans TC";
     font-weight: 600;
